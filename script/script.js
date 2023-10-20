@@ -35,7 +35,7 @@ async function fetchData() {
       </div>
     `;
       const container = document.querySelector(".container");
-      console.log(card);
+
       container.appendChild(card);
     });
 
@@ -50,3 +50,29 @@ async function fetchData() {
 
 // Call the async function to fetch and store the data
 fetchData();
+
+var loginForm = document.getElementById("loginForm");
+var loginBtn = document.getElementById("loginBtn");
+
+loginForm.addEventListener("click", function (event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get form values
+  var username = document.getElementById("UserName").value;
+  var password = document.getElementById("lname").value;
+
+  // Simple validation: Check if username and password are not empty
+  if (username.trim() === "" || password.trim() === "") {
+    alert("Please enter both username and password.");
+  } else {
+    // Perform your login logic here (send data to server, etc.)
+    // For demonstration purposes, let's just show an alert
+    alert("Logged in successfully!");
+  }
+});
+
+var forgotPasswordBtn = document.getElementById("forgotPasswordBtn");
+forgotPasswordBtn.addEventListener("click", function () {
+  // Handle forgot password functionality here
+  alert("Forgot Password button clicked!");
+});
